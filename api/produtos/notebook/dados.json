@@ -1,0 +1,20 @@
+{
+  "id": "notebook",
+  "nome": "Notebook",
+  "preco": 2999,
+  "descricao": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt illo tempora sapiente ipsa sint tenetur distinctio inventore assumenda reprehenderit facilis lorem ipsum dolor sit.",
+  "estoque": 12,
+  "img": "./api/produtos/notebook/notebook-foto.jpg",
+  "reviews": [
+    {
+      "nome": "Fábio",
+      "estrelas": 5,
+      "descricao": "Gostei muito do produto, atendeu todas as minhas necessidades"
+    },
+    {
+      "nome": "Fábio",
+      "estrelas": 5,
+      "descricao": "Gostei muito do produto, atendeu todas as minhas necessidades"
+    }
+  ]
+}

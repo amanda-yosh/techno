@@ -1,0 +1,20 @@
+{
+  "id": "tablet",
+  "nome": "Tablet",
+  "preco": 899,
+  "descricao": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt illo tempora sapiente ipsa sint tenetur distinctio inventore assumenda reprehenderit facilis lorem ipsum dolor sit.",
+  "estoque": 2,
+  "img": "./api/produtos/tablet/tablet-foto.jpg",
+  "reviews": [
+    {
+      "nome": "Rogério",
+      "estrelas": 5,
+      "descricao": "Gostei muito do produto, atendeu todas as minhas necessidades."
+    },
+    {
+      "nome": "Nathália",
+      "estrelas": 4,
+      "descricao": "Gostei, mas o preço poderia ser melhor."
+    }
+  ]
+}

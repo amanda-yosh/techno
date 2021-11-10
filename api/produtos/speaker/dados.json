@@ -1,0 +1,20 @@
+{
+  "id": "speaker",
+  "nome": "Speaker",
+  "preco": 599,
+  "descricao": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt illo tempora sapiente ipsa sint tenetur distinctio inventore assumenda reprehenderit facilis lorem ipsum dolor sit.",
+  "estoque": 3,
+  "img": "./api/produtos/speaker/speaker-foto.jpg",
+  "reviews": [
+    {
+      "nome": "Rogério",
+      "estrelas": 5,
+      "descricao": "Gostei muito do produto, atendeu todas as minhas necessidades."
+    },
+    {
+      "nome": "Nathália",
+      "estrelas": 4,
+      "descricao": "Gostei, mas o preço poderia ser melhor."
+    }
+  ]
+}
