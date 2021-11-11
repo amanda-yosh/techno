@@ -31,6 +31,7 @@ body {
   margin-bottom: 40px;
   /* background: #ffffff; */
   box-shadow: 0 0 2rem rgba(0, 0, 0, .1);
+  cursor: pointer;
 }
 
 .produto_img {
@@ -46,5 +47,3 @@ body {
 .produto.preco {
   color: rgba(0, 0, 0, .5);
 }
-
-
