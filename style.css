@@ -10,3 +10,41 @@ body, h1, h2, ul, li {
 ul {
   list-style: none;
 }
+
+body {
+  background: linear-gradient(to right, #1a1a1a 30%, #ffffff 30%);
+  font-family: 'Noto Serif', serif;
+}
+
+#app {
+  padding: 0 80px; /* top&bottom  rigth&left */
+}
+
+.produtos {
+  max-width: 900px;
+  margin: 100px auto 0 auto;
+}
+
+.produto {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  /* background: #ffffff; */
+  box-shadow: 0 0 2rem rgba(0, 0, 0, .1);
+}
+
+.produto_img {
+  max-width: 300px;
+  margin-right: 40px;
+}
+
+.produto_titulo {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.produto.preco {
+  color: rgba(0, 0, 0, .5);
+}
+
+
