@@ -14,8 +14,13 @@
 <body>
 
   <div id="app">
+
+    <section class="modal">
+      {{produto}}
+    </section>
+
     <section class="produtos">
-      <div v-for="produto in produtos" :key="produto.id" class="produto">
+      <div v-for="produto in produtos" :key="produto.id" class="produto" @click="fecthProduto(produto.id)">
         <img :src="produto.img" :alt="produto.nome" class="produto_img">
         <div class="produto_info">
           <span class="produto.preco">{{produto.preco | precoFormat}}</span>
@@ -23,6 +28,7 @@
         </div>
       </div>
     </section>
+
   </div>
 
   <script src="./app.js"></script>
