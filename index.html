@@ -15,10 +15,10 @@
 
   <div id="app">
     <section class="produtos">
-      <div v-for="produto in produtos" :key="produto.id" class="produtos">
+      <div v-for="produto in produtos" :key="produto.id" class="produto">
         <img :src="produto.img" :alt="produto.nome" class="produto_img">
         <div class="produto_info">
-          <span class="produto.preco">{{produto.preco}}</span>
+          <span class="produto.preco">{{produto.preco | precoFormat}}</span>
           <h2 class="produto_titulo">{{produto.nome}}</h2>
         </div>
       </div>

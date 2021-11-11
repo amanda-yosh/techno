@@ -3,6 +3,11 @@ const vm = new Vue({
   data: {
     produtos: []
   },
+  filters: {
+    precoFormat(valor) {
+      return valor.toLocaleString("pt-br", { style: "currency", currency: "BRL" })
+    }
+  },
   methods: {
     fetchProdutos() {
       fetch("./api/produtos.json")
