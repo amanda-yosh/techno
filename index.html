@@ -15,7 +15,30 @@
 
   <div id="app">
 
-    <section class="modal" v-if="produto">
+    <header class="header">
+      <img class="logo" src="./assets/techno.svg" alt="Logo da Techno">
+      <div class="carrinho_menu">
+        {{carrinhoTotal | precoFormat}} | {{carrinho.length}}
+      </div>
+      <ul>
+        <li v-for="(item, index) in carrinho">
+          <p>{{item.nome}}</p>
+          <button @click="removerItem(index)">X</button>
+        </li>
+      </ul>
+    </header>
+
+    <section class="produtos">
+      <div v-for="produto in produtos" :key="produto.id" class="produto" @click="abrirProduto(produto.id)">
+        <img :src="produto.img" :alt="produto.nome" class="produto_img">
+        <div class="produto_info">
+          <span class="produto.preco">{{produto.preco | precoFormat}}</span>
+          <h2 class="produto_titulo">{{produto.nome}}</h2>
+        </div>
+      </div>
+    </section>
+
+    <section @click="fecharModal" class="modal" v-if="produto">
       <div class="modal_container">
 
         <div class="modal_img">
@@ -23,10 +46,12 @@
         </div>
 
         <div class="modal_dados">
+          <button @click="produto = false" class="modal_btn_fechar">X</button>
           <span>{{produto.preco | precoFormat}}</span>
           <h2 class="modal_titulo">{{produto.nome}}</h2>
           <p>{{produto.descricao}}</p>
-          <button class="modal_btn">Adicionar Item</button>
+          <button v-if="produto.estoque > 0" @click="adicionarItem" class="modal_btn">Adicionar Item</button>
+          <button v-else class="modal_btn esgotado" disabled>Produto Esgotado</button>
         </div>
 
         <div class="modal_reviews">
@@ -39,16 +64,6 @@
           </ul>
         </div>
 
-      </div>
-    </section>
-
-    <section class="produtos">
-      <div v-for="produto in produtos" :key="produto.id" class="produto" @click="fecthProduto(produto.id)">
-        <img :src="produto.img" :alt="produto.nome" class="produto_img">
-        <div class="produto_info">
-          <span class="produto.preco">{{produto.preco | precoFormat}}</span>
-          <h2 class="produto_titulo">{{produto.nome}}</h2>
-        </div>
       </div>
     </section>
 
