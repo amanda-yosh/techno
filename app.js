@@ -5,6 +5,7 @@ const vm = new Vue({
     produtos: [],
     produto: false,
     carrinho: [],
+    carrinhoAtivo: false,
     mensagemAlerta: "Item adicionado",
     alertaAtivo: false,
   },
@@ -54,6 +55,10 @@ const vm = new Vue({
       if (target === currentTarget) this.produto = false
     },
 
+    clickForaCarrinho({ target, currentTarget }) {
+      if (target === currentTarget) this.produto = false
+    },
+
     adicionarItem() {
       if (this.produto.estoque > 0) {
         const { id, nome, preco } = this.produto
@@ -86,7 +91,7 @@ const vm = new Vue({
 
     router() {
       const hash = (document.location.hash).replace("#", "")
-      
+
       if (hash)
         this.fecthProduto(hash)
     },
