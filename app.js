@@ -66,9 +66,23 @@ const vm = new Vue({
         this.carrinho.splice(index, 1)
       }
     },
+
+    checarLocalStorage() {
+      if (window.localStorage.carrinho)
+        this.carrinho = JSON.parse(window.localStorage.carrinho)
+    }
+  },
+
+  watch: {
+    //sempre que eu quiser ficar de olho nas mudanças de uma propriedade eu coloco dentro do watch
+    carrinho() {
+      window.localStorage.carrinho = JSON.stringify(this.carrinho)
+    }
   },
 
   created() {
+    // quando a instancia do Vue for criada
     this.fetchProdutos()
+    this.checarLocalStorage()
   }
 })
