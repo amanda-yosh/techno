@@ -83,18 +83,33 @@ const vm = new Vue({
         this.alertaAtivo = false
       }, 1500)
     },
+
+    router() {
+      const hash = (document.location.hash).replace("#", "")
+      
+      if (hash)
+        this.fecthProduto(hash)
+    },
   },
 
   watch: {
     //sempre que eu quiser ficar de olho nas mudanças de uma propriedade eu coloco dentro do watch
     carrinho() {
       window.localStorage.carrinho = JSON.stringify(this.carrinho)
-    }
+    },
+
+    produto() {
+      document.title = this.produto.nome || "Techno"
+      // para mudar o hash da url utilizar o pushState do history
+      const hash = this.produto.id || ""
+      history.pushState(null, null, `#${hash}`)
+    },
   },
 
   created() {
     // quando a instancia do Vue for criada
     this.fetchProdutos()
+    this.router()
     this.checarLocalStorage()
   }
 })
